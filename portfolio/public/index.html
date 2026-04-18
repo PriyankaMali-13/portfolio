@@ -3,179 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Priyanka Mali</title>
+  <title>Priyanka Mali | Backend Developer</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- AOS Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
 </head>
 <body>
 
-  <!-- ═══════════════════════════ NAVIGATION ════════════════════════════════ -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+  <!-- Animated Background Orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home"     class="nav-link active">Home</a>
-        <a href="#about"    class="nav-link">About Me</a>
-        <a href="#projects" class="nav-link">My Projects</a>
-        <a href="#contact"  class="nav-link">Contact Me</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ═══════════════════════════ HOME SECTION ══════════════════════════════ -->
-  <section id="home" class="section hero">
-    <div class="hero-content">
-      <p class="hero-greeting">Hi, I'm</p>
-      <h1 class="hero-name" id="heroName">Loading...</h1>
-      <h2 class="hero-title" id="heroTitle"></h2>
-      <p class="hero-summary" id="heroSummary"></p>
-
-      <div class="hero-skills" id="heroSkills"><!-- Populated by JS --></div>
-
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact"  class="btn btn-outline">Get In Touch</a>
-        <a href="/resume.pdf" class="btn btn-ghost" download>
-          ⬇ Download Resume
-        </a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">My Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+        </ul>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="code-card">
-        <div class="code-dots">
-          <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="home" class="hero-section d-flex align-items-center">
+    <div class="container position-relative">
+      <div class="row align-items-center gy-5">
+
+        <!-- Left -->
+        <div class="col-lg-7" data-aos="fade-right" data-aos-duration="800">
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1 class="hero-name" id="heroName">Priyanka Mali</h1>
+          <div class="hero-typed mb-3">
+            <span id="typedText"></span><span class="typed-cursor">|</span>
+          </div>
+          <p class="hero-summary mb-4" id="heroSummary"></p>
+          <div class="hero-tags mb-4" id="heroSkills"></div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#projects" class="btn btn-gradient">
+              <i class="bi bi-rocket-takeoff-fill me-2"></i>View My Work
+            </a>
+            <a href="#contact" class="btn btn-outline-custom">
+              <i class="bi bi-chat-dots-fill me-2"></i>Get In Touch
+            </a>
+            <a href="/resume.pdf" class="btn btn-ghost-custom" download>
+              <i class="bi bi-download me-2"></i>Resume
+            </a>
+          </div>
         </div>
-        <pre class="code-block"><code><span class="kw">const</span> developer = {
-  <span class="key">name</span>: <span class="str">"Priyanka"</span>,
-  <span class="key">passion</span>: <span class="str">"Building things"</span>,
-  <span class="key">stack</span>: [<span class="str">"Node.js"</span>, <span class="str">"AWS"</span>],
-  <span class="key">coffee</span>: <span class="bool">true</span>,
-  <span class="key">status</span>: <span class="str">"Available"</span>
+
+        <!-- Right -->
+        <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+          <!-- Code Card -->
+          <div class="code-card mb-4">
+            <div class="code-dots">
+              <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+            </div>
+            <pre class="code-block"><code><span class="kw">const</span> developer = {
+  <span class="key">name</span>:   <span class="str">"Priyanka Mali"</span>,
+  <span class="key">role</span>:   <span class="str">"Backend Developer"</span>,
+  <span class="key">stack</span>:  [<span class="str">"Node.js"</span>, <span class="str">"AWS"</span>],
+  <span class="key">loves</span>:  <span class="str">"Serverless"</span>,
+  <span class="key">coffee</span>: <span class="bool">true</span> ☕,
+  <span class="key">status</span>: <span class="str">"Open to Work ✅"</span>
 };</code></pre>
+          </div>
+
+          <!-- Stats -->
+          <div class="row g-3 text-center">
+            <div class="col-4">
+              <div class="stat-card">
+                <h3 class="stat-num">4+</h3>
+                <p class="stat-label">Years Exp.</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card">
+                <h3 class="stat-num">3</h3>
+                <p class="stat-label">AWS Certs</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card">
+                <h3 class="stat-num">3</h3>
+                <p class="stat-label">Awards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <a href="#about" class="scroll-arrow" aria-label="Scroll down">↓</a>
+    <a href="#about" class="scroll-arrow"><i class="bi bi-chevron-double-down"></i></a>
   </section>
 
-  <!-- ═══════════════════════════ ABOUT SECTION ═════════════════════════════ -->
-  <section id="about" class="section">
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about" class="section py-section">
     <div class="container">
-      <h2 class="section-title">About <span class="accent">Me</span></h2>
-      <p class="section-subtitle">My background, skills & experience</p>
-
-      <div class="about-grid">
-        <!-- Bio + Skills -->
-        <div class="about-left">
-          <div class="about-card">
-            <h3>Who I Am</h3>
-            <p id="aboutSummary"></p>
-          </div>
-
-          <div class="skills-grid" id="skillsGrid"><!-- Populated by JS --></div>
-        </div>
-
-        <!-- Timeline -->
-        <div class="about-right">
-          <h3 class="timeline-heading">Experience</h3>
-          <div class="timeline" id="timeline"><!-- Populated by JS --></div>
-
-          <h3 class="timeline-heading" style="margin-top:2rem;">Education</h3>
-          <div class="timeline" id="educationTimeline"><!-- Populated by JS --></div>
-
-          <h3 class="timeline-heading" style="margin-top:2rem;">Awards</h3>
-          <ul class="awards-list" id="awardsList"><!-- Populated by JS --></ul>
-
-          <h3 class="timeline-heading" style="margin-top:2rem;">Certifications</h3>
-          <ul class="cert-list" id="certList"><!-- Populated by JS --></ul>
-        </div>
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <span class="section-tag">Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">My background, skills &amp; experience</p>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════ PROJECTS SECTION ══════════════════════════ -->
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">My <span class="accent">Projects</span></h2>
-      <p class="section-subtitle">Things I've built — click a card to learn more</p>
-
-      <div class="projects-grid" id="projectsGrid"><!-- Populated by JS --></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ CONTACT SECTION ═══════════════════════════ -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Contact <span class="accent">Me</span></h2>
-      <p class="section-subtitle">Have a project in mind? Let's talk.</p>
-
-      <div class="contact-grid">
-        <!-- Info panel -->
-        <div class="contact-info">
-          <div class="info-item">
-            <span class="info-icon">✉</span>
-            <div>
-              <strong>Email</strong>
-              <p id="infoEmail">Loading...</p>
-            </div>
+      <div class="row g-4">
+        <!-- Left: Bio + Skills -->
+        <div class="col-lg-5">
+          <div class="glass-card p-4 mb-4" data-aos="fade-right">
+            <h6 class="card-heading"><i class="bi bi-person-circle me-2"></i>Who I Am</h6>
+            <p class="text-muted mb-0" id="aboutSummary"></p>
           </div>
-          <div class="info-item">
-            <span class="info-icon">📞</span>
-            <div>
-              <strong>Phone</strong>
-              <p id="infoPhone">Loading...</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">📍</span>
-            <div>
-              <strong>Location</strong>
-              <p id="infoLocation">Loading...</p>
-            </div>
-          </div>
-          <div class="social-links" id="socialLinks"><!-- Populated by JS --></div>
+          <div id="skillsGrid"></div>
         </div>
 
-        <!-- Contact Form -->
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="name">Your Name <span class="required">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
-            <span class="field-error" id="nameError"></span>
+        <!-- Right: Timeline, Education, Awards, Certs -->
+        <div class="col-lg-7">
+          <div data-aos="fade-left">
+            <h6 class="timeline-heading"><i class="bi bi-briefcase-fill me-2"></i>Experience</h6>
+            <div class="timeline" id="timeline"></div>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address <span class="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
-            <span class="field-error" id="emailError"></span>
+          <div class="mt-4" data-aos="fade-left" data-aos-delay="100">
+            <h6 class="timeline-heading"><i class="bi bi-mortarboard-fill me-2"></i>Education</h6>
+            <div class="timeline" id="educationTimeline"></div>
           </div>
-          <div class="form-group">
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-            <span class="field-error" id="messageError"></span>
+          <div class="mt-4" data-aos="fade-left" data-aos-delay="200">
+            <h6 class="timeline-heading"><i class="bi bi-trophy-fill me-2"></i>Awards</h6>
+            <ul class="awards-list" id="awardsList"></ul>
           </div>
-          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-            Send Message
-          </button>
-          <div class="form-status" id="formStatus"></div>
-        </form>
+          <div class="mt-4" data-aos="fade-left" data-aos-delay="300">
+            <h6 class="timeline-heading"><i class="bi bi-patch-check-fill me-2"></i>Certifications</h6>
+            <ul class="cert-list" id="certList"></ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ FOOTER ════════════════════════════════════ -->
-  <footer class="footer">
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects" class="section py-section section-alt">
     <div class="container">
-      <p>Built with ❤️ using Node.js & Express &nbsp;|&nbsp; <span id="footerName"></span></p>
-      <p class="footer-year" id="footerYear"></p>
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <span class="section-tag">What I've built</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">Real-world solutions built with AWS &amp; Node.js</p>
+      </div>
+      <div class="row g-4" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact" class="section py-section">
+    <div class="container">
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <span class="section-tag">Let's connect</span>
+        <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">Have a project in mind? Let's talk.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Info -->
+        <div class="col-lg-4" data-aos="fade-right">
+          <div class="d-flex flex-column gap-3 mb-3">
+            <div class="glass-card p-3 d-flex align-items-center gap-3">
+              <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <small class="info-label">Email</small>
+                <p class="mb-0 fw-semibold" id="infoEmail"></p>
+              </div>
+            </div>
+            <div class="glass-card p-3 d-flex align-items-center gap-3">
+              <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <small class="info-label">Phone</small>
+                <p class="mb-0 fw-semibold" id="infoPhone"></p>
+              </div>
+            </div>
+            <div class="glass-card p-3 d-flex align-items-center gap-3">
+              <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <small class="info-label">Location</small>
+                <p class="mb-0 fw-semibold" id="infoLocation"></p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-2" id="socialLinks"></div>
+        </div>
+
+        <!-- Form -->
+        <div class="col-lg-8" data-aos="fade-left">
+          <div class="glass-card p-4">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Your Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control custom-input" id="name" name="name" placeholder="Jane Smith" required />
+                  <div class="field-error" id="nameError"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control custom-input" id="email" name="email" placeholder="jane@example.com" required />
+                  <div class="field-error" id="emailError"></div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
+                  <textarea class="form-control custom-input" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                  <div class="field-error" id="messageError"></div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-gradient w-100" id="submitBtn">
+                    <i class="bi bi-send-fill me-2"></i>Send Message
+                  </button>
+                </div>
+                <div class="col-12">
+                  <div id="formStatus"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer text-center py-4">
+    <div class="container">
+      <p class="mb-1">Built with <span class="text-danger">♥</span> using <span class="gradient-text fw-bold">Node.js &amp; Express</span> &nbsp;|&nbsp; <span id="footerName"></span></p>
+      <p class="text-muted small mb-0" id="footerYear"></p>
     </div>
   </footer>
 
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Custom JS -->
   <script src="/js/main.js"></script>
 </body>
 </html>
