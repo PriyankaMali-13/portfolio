@@ -1,0 +1,4 @@
+Place your resume PDF here and rename it to: resume.pdf
+
+The "Download Resume" button in the hero section links to /resume.pdf
+(served automatically by Express as a static file).

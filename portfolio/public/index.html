@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Priyanka Mali</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAVIGATION ════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home"     class="nav-link active">Home</a>
+        <a href="#about"    class="nav-link">About Me</a>
+        <a href="#projects" class="nav-link">My Projects</a>
+        <a href="#contact"  class="nav-link">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ HOME SECTION ══════════════════════════════ -->
+  <section id="home" class="section hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name" id="heroName">Loading...</h1>
+      <h2 class="hero-title" id="heroTitle"></h2>
+      <p class="hero-summary" id="heroSummary"></p>
+
+      <div class="hero-skills" id="heroSkills"><!-- Populated by JS --></div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+        <a href="/resume.pdf" class="btn btn-ghost" download>
+          ⬇ Download Resume
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="code-card">
+        <div class="code-dots">
+          <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+        </div>
+        <pre class="code-block"><code><span class="kw">const</span> developer = {
+  <span class="key">name</span>: <span class="str">"Priyanka"</span>,
+  <span class="key">passion</span>: <span class="str">"Building things"</span>,
+  <span class="key">stack</span>: [<span class="str">"Node.js"</span>, <span class="str">"AWS"</span>],
+  <span class="key">coffee</span>: <span class="bool">true</span>,
+  <span class="key">status</span>: <span class="str">"Available"</span>
+};</code></pre>
+      </div>
+    </div>
+    <a href="#about" class="scroll-arrow" aria-label="Scroll down">↓</a>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT SECTION ═════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About <span class="accent">Me</span></h2>
+      <p class="section-subtitle">My background, skills & experience</p>
+
+      <div class="about-grid">
+        <!-- Bio + Skills -->
+        <div class="about-left">
+          <div class="about-card">
+            <h3>Who I Am</h3>
+            <p id="aboutSummary"></p>
+          </div>
+
+          <div class="skills-grid" id="skillsGrid"><!-- Populated by JS --></div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="about-right">
+          <h3 class="timeline-heading">Experience</h3>
+          <div class="timeline" id="timeline"><!-- Populated by JS --></div>
+
+          <h3 class="timeline-heading" style="margin-top:2rem;">Education</h3>
+          <div class="timeline" id="educationTimeline"><!-- Populated by JS --></div>
+
+          <h3 class="timeline-heading" style="margin-top:2rem;">Awards</h3>
+          <ul class="awards-list" id="awardsList"><!-- Populated by JS --></ul>
+
+          <h3 class="timeline-heading" style="margin-top:2rem;">Certifications</h3>
+          <ul class="cert-list" id="certList"><!-- Populated by JS --></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PROJECTS SECTION ══════════════════════════ -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">My <span class="accent">Projects</span></h2>
+      <p class="section-subtitle">Things I've built — click a card to learn more</p>
+
+      <div class="projects-grid" id="projectsGrid"><!-- Populated by JS --></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACT SECTION ═══════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+      <p class="section-subtitle">Have a project in mind? Let's talk.</p>
+
+      <div class="contact-grid">
+        <!-- Info panel -->
+        <div class="contact-info">
+          <div class="info-item">
+            <span class="info-icon">✉</span>
+            <div>
+              <strong>Email</strong>
+              <p id="infoEmail">Loading...</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <p id="infoPhone">Loading...</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <p id="infoLocation">Loading...</p>
+            </div>
+          </div>
+          <div class="social-links" id="socialLinks"><!-- Populated by JS --></div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            <span class="field-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            <span class="field-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <span class="field-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            Send Message
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p>Built with ❤️ using Node.js & Express &nbsp;|&nbsp; <span id="footerName"></span></p>
+      <p class="footer-year" id="footerYear"></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
